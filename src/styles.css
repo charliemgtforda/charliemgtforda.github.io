@@ -656,14 +656,12 @@ p {
 .project-browser {
   position: relative;
   z-index: 2;
-  width: min(100%, 700px);
+  width: min(100%, 760px);
   overflow: hidden;
   border: 7px solid white;
   border-radius: 12px;
   background: white;
   box-shadow: 0 32px 65px rgba(99,54,39,.23);
-  transform: translate3d(0, var(--parallax-y, 0), 0) rotate(-1.5deg);
-  will-change: transform;
 }
 
 .project-browser-bar {
@@ -678,8 +676,7 @@ p {
 
 .project-dots { position: absolute; left: 6px; color: #c7c0ba; font-size: .42rem; letter-spacing: 2px; }
 .ht-frame { aspect-ratio: 16/10; overflow: hidden; background: #f7f4ed; }
-.ht-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 900ms cubic-bezier(.2,.65,.3,1); }
-.featured-project:hover .ht-frame img { transform: scale(1.025); }
+.ht-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 
 .project-copy {
   display: flex;
@@ -688,9 +685,7 @@ p {
   padding: clamp(38px, 5vw, 75px);
 }
 
-.project-type,
-.card-meta span,
-.tiny-label {
+.project-type {
   color: var(--coral);
   font-size: .65rem;
   font-weight: 700;
@@ -762,59 +757,6 @@ p {
 .project-details > div { display: grid; grid-template-columns: 80px 1fr; gap: 10px; margin-bottom: 12px; font-size: .72rem; line-height: 1.5; }
 .project-details b { color: var(--coral); }
 .project-details span { color: var(--muted); }
-
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 26px;
-  margin-top: 26px;
-}
-
-.project-card { min-width: 0; }
-
-.concept-visual {
-  position: relative;
-  min-height: 460px;
-  overflow: hidden;
-  border-radius: 5px;
-}
-
-.concept-browser-bar {
-  display: flex;
-  gap: 5px;
-  padding: 15px;
-}
-
-.concept-browser-bar i { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .26; }
-
-.studio-concept { color: #5d463b; background: #d7c2ac; }
-.concept-brand { display: flex; justify-content: space-between; padding: 22px 42px; border-top: 1px solid rgba(93,70,59,.25); font-size: .55rem; letter-spacing: .12em; }
-.concept-brand span { font-family: var(--serif); font-size: .78rem; letter-spacing: .22em; }
-.concept-title { position: relative; z-index: 2; max-width: 430px; margin: 58px auto 0; padding: 0 30px; font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.7rem); line-height: .92; text-align: center; }
-.concept-arches { position: absolute; right: 0; bottom: -45px; left: 0; display: flex; justify-content: center; gap: 12px; }
-.concept-arches i { width: 150px; height: 210px; border-radius: 100px 100px 0 0; background: #efded0; }
-.concept-arches i:last-child { background: #a6a58a; }
-
-.portfolio-concept { padding: 0 38px 36px; color: #f7eee3; background: var(--forest); }
-.portfolio-concept .concept-browser-bar { margin: 0 -38px; }
-.portfolio-concept .tiny-label { display: block; margin-top: 45px; color: var(--coral-soft); }
-.portfolio-words { position: relative; z-index: 2; margin-top: 30px; font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: .93; }
-.portfolio-words em { color: var(--coral-soft); }
-.portfolio-ui { position: absolute; right: 40px; bottom: 35px; display: grid; grid-template-columns: repeat(3, 65px); gap: 8px; transform: rotate(-5deg); }
-.portfolio-ui i { height: 90px; background: #d6c6b5; }
-.portfolio-ui i:nth-child(2) { background: var(--coral); }
-.portfolio-ui i:nth-child(3) { background: #859d92; }
-
-.card-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 4px 0;
-}
-
-.card-meta h3 { margin: 3px 0 0; font-family: var(--serif); font-size: 1.45rem; font-weight: 400; }
-.round-arrow { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--ink) !important; font-size: 1rem !important; transition: color 180ms, background 180ms; }
-.project-card:hover .round-arrow { color: white !important; background: var(--forest); }
 
 .services {
   width: 100%;
@@ -1003,8 +945,6 @@ p {
   .project-actions { grid-template-columns: 1fr; }
   .project-live-link { padding-right: 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .project-link { padding-left: 0; }
-  .project-grid { grid-template-columns: 1fr; gap: 45px; }
-  .concept-visual { min-height: 420px; }
   .services { width: 100%; padding-right: 16px; padding-left: 16px; }
   .service-list { grid-template-columns: 1fr; }
   .service { min-height: auto; padding: 28px 8px 36px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
@@ -1038,15 +978,6 @@ p {
   .value-strip p:nth-of-type(2), .value-strip i:nth-of-type(2) { display: none; }
   .section-shell { width: calc(100% - 28px); }
   .project-visual { min-height: 310px; padding: 22px; }
-  .concept-visual { min-height: 340px; }
-  .concept-title { margin-top: 40px; font-size: 2.8rem; }
-  .concept-brand { padding-right: 24px; padding-left: 24px; }
-  .portfolio-concept { padding-right: 24px; padding-left: 24px; }
-  .portfolio-concept .concept-browser-bar { margin-right: -24px; margin-left: -24px; }
-  .portfolio-words { font-size: 2.8rem; }
-  .portfolio-ui { right: 20px; grid-template-columns: repeat(3, 45px); }
-  .portfolio-ui i { height: 65px; }
-  .card-meta h3 { font-size: 1.22rem; }
   .process-steps li { grid-template-columns: 40px 1fr; gap: 15px; }
   .contact { width: 100%; }
   .contact-card { padding-right: 20px; padding-left: 20px; }
